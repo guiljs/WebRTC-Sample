@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script>
+      function success(stream) {
+        var video = document.querySelector("video");
+        console.log(video);
+        video.srcObject = stream;
+
+        video.play();
+      }
+
+      function erro(error) {
+        console.log("Deu erro");
+      }
+    </script>
+  </head>
+  <body>
+    <video></video>
+    <script>
+      navigator.getUserMedia({ video: true, audio: true }, success, erro);
+    </script>
+  </body>
+</html>
